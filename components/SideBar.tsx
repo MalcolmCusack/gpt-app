@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React from "react";
-import NewChat from "./NewChat";
+import NewChat from "./chat/NewChat";
 import { signOut, useSession } from "next-auth/react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { collection, orderBy, query } from "firebase/firestore";
 import { db } from "@/firebase";
-import ChatRow from "./ChatRow";
+import ChatRow from "./chat/ChatRow";
 
 function SideBar() {
   const { data: session } = useSession();
