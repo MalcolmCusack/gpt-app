@@ -1,11 +1,7 @@
 import queryChatGPT from "@/lib/queryApi";
 import admin from "firebase-admin";
 import { adminDb } from "@/firebaseAdmin";
-import { log } from "console";
-
-type Data = {
-  answer: string;
-};
+import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   const { prompt, chatId, model, session } = await req.json();
@@ -35,7 +31,5 @@ export async function POST(req: Request) {
     .collection("messages")
     .add(message);
 
-  return new Response(JSON.stringify({ answer: message.text }), {
-    status: 200,
-  });
+  return NextResponse.json({ answer: message.text });
 }
