@@ -21,7 +21,6 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* <Header /> */}
         <SessionProvider session={session}>
           {!session ? (
             <Login />
@@ -33,7 +32,9 @@ export default async function RootLayout({
                     <SideBar />
                   </div>
 
-                  <div className="bg-[#343541] flex-1">{children}</div>
+                  <div className="bg-white dark:bg-[#343541] flex-1">
+                    {children}
+                  </div>
                 </ClientProvider>
               </div>
             </>

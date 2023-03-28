@@ -49,7 +49,9 @@ function SideBar() {
             alt=""
             className="h-12 w-12 rounded-full  mx-auto mb-2 hover:opacity-50"
           />
-          <DarkModeButton />
+          <div className="ml-6">
+            <DarkModeButton />
+          </div>
           <button
             className="text-white text-lg m-5 border rounded-md w-15 h-10 hover:bg-[#343541]"
             onClick={() => signOut()}

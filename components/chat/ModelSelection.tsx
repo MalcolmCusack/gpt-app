@@ -3,6 +3,7 @@
 import React from "react";
 import useSWR from "swr";
 import Select from "react-select";
+import { useTheme } from "next-themes";
 
 const fetchModels = () => fetch("/api/getModels").then((res) => res.json());
 
@@ -14,7 +15,7 @@ function ModelSelection() {
   return (
     <div className="mt-2">
       <Select
-        className="mt-2"
+        className="mt-2 text-black"
         options={models}
         defaultValue={model}
         placeholder={model}
@@ -22,7 +23,7 @@ function ModelSelection() {
         isLoading={isLoading}
         menuPosition="fixed"
         classNames={{
-          control: (state) => `bg-[#434654] border-[#434654] text-white`,
+          control: (state) => `bg-[#434654] border-[#434654 text-black`,
         }}
         onChange={(e: any) => setModal(e.value)}
       />
