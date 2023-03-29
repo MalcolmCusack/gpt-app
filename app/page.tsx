@@ -4,6 +4,7 @@ import {
   ExclamationTriangleIcon,
   NewspaperIcon,
 } from "@heroicons/react/24/outline";
+import NewChat from "@/components/chat/NewChat";
 
 function Home() {
   return (
@@ -61,6 +62,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <NewChat />
     </div>
   );
 }
